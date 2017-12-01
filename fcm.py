@@ -1,6 +1,7 @@
 import random as rd
 import numpy as np
 from preprocess import getdata
+from time import time
 
 # distance mode: 1-manhattan, 2-euclidean, 3++
 distmode = 2
@@ -15,7 +16,7 @@ m = 2
 # maximum iteration
 maxiter = 100
 # epsilon
-eps = 0.2
+eps = 0.1
 # matrix U
 mat = []
 # old matrix U
@@ -147,7 +148,9 @@ while (it < maxiter) and (findMaxDif() >= eps):
     print 'Epoch', it
     copyMat()
     updateC()
+    t = time()
     updateU()
+    print 'time:', time()-t
     print findMaxDif()
 
 if it < maxiter:
