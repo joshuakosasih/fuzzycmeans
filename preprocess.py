@@ -1,4 +1,5 @@
 import pandas as pd
+from scipy import stats
 
 # read data
 data = pd.read_csv('./CensusIncome/cid.csv')
@@ -29,6 +30,10 @@ del data['occupation']
 del data['relationship']
 del data['race']
 del data['sex']
+del data[' ?']
+
+for names in data.columns:
+    data[names] = stats.zscore(data[names])*10
 
 
 def getdata():
