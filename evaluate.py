@@ -13,11 +13,12 @@ for tup in listclass:
 		classes.append([tup[len(tup)-1]])
 i = 0;
 for tup in listscore:
-	if (tup[0] >= tup[1]):
-		classes[i].append("class1")
-	else:
-		classes[i].append("class2")
-	i+=1
+	if (len(tup) > 1):
+		if (tup[0] >= tup[1]):
+			classes[i].append("class1")
+		else:
+			classes[i].append("class2")
+		i+=1
 print(classes)
 
 c1m = 0
