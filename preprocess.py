@@ -2,7 +2,7 @@ import pandas as pd
 from scipy import stats
 
 # read data
-data = pd.read_csv('./CensusIncome/cid.csv')
+data = pd.read_csv('./CensusIncome/cit.csv')
 
 target = data['income']
 del data['income']

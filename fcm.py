@@ -16,7 +16,7 @@ m = 2
 # maximum iteration
 maxiter = 100
 # epsilon
-eps = 0.01
+eps = 0.001
 # matrix U
 mat = []
 # old matrix U
