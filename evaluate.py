@@ -2,7 +2,7 @@ import csv
 from sklearn import metrics
 from sklearn.metrics import classification_report
 with open('out_matrix', 'r') as csvfile:
-	mat = csv.reader(csvfile, delimiter=' ', quotechar='|')
+	mat = csv.reader(csvfile, delimiter=',', quotechar='|')
 	listscore = list(mat)
 with open('./CensusIncome/CencusIncome.test.txt', 'r') as csvfile:
 	mat2 = csv.reader(csvfile, delimiter=' ', quotechar='|')
@@ -16,14 +16,14 @@ for tup in listclass:
 			true.append(0)
 		elif tup[len(tup)-1].find("<"):
 			true.append(1)
-i = 0;
+
 for tup in listscore:
 	if (len(tup) > 1):
-		if (tup[0] >= tup[1]):
+		if (float(tup[0]) >= float(tup[1])):
 			ans.append(0)
 		else:
 			ans.append(1)
-		i+=1
+
 target_names = ['class 1', 'class 2']
 print(classification_report(true, ans, target_names=target_names))
 print("Homogenity: ")
